@@ -10,6 +10,8 @@ export class MainMenu extends Scene
   logo: GameObjects.Image
   title: GameObjects.Text
   classicButton: GameObjects.Text
+  classicButtonTooltip: GameObjects.Text
+  speedrunButtonTooltip: GameObjects.Text
   inputElement: HTMLInputElement
   logoTween: Phaser.Tweens.Tween | null
 
@@ -34,16 +36,24 @@ export class MainMenu extends Scene
       align: 'center'
     }).setOrigin(0.5).setDepth(100)
 
+    this.classicButtonTooltip = this.add.text(512, 340, '30 seconds to get the most items you can.', {
+      fontFamily: 'Arial', fontSize: 20, color: 'white',
+      backgroundColor: 'black',
+      align: 'center'
+    }).setOrigin(0.5).setDepth(100).setVisible(false)
+
     this.classicButton.setInteractive({ useHandCursor: true }).on('pointerdown', () => {
       this.startGame('Game')
     })
 
     this.classicButton.on('pointerover', () => {
       this.classicButton.setStyle({ color: '#ff0' }) // Change color on hover
+      this.classicButtonTooltip.setVisible(true) // Show tooltip
     })
 
     this.classicButton.on('pointerout', () => {
       this.classicButton.setStyle({ color: 'yellow' }) // Reset color when not hovering
+      this.classicButtonTooltip.setVisible(false) // Hide tooltip
     })
 
     this.title = this.add.text(512, 480, 'Speedrun Mode', {
@@ -52,6 +62,12 @@ export class MainMenu extends Scene
       align: 'center'
     }).setOrigin(0.5).setDepth(100)
 
+    this.speedrunButtonTooltip = this.add.text(512, 520, 'Get every item in a minimum of time', {
+      fontFamily: 'Arial', fontSize: 20, color: 'white',
+      backgroundColor: 'black',
+      align: 'center'
+    }).setOrigin(0.5).setDepth(100).setVisible(false)
+
     // Ajoutez l'écouteur d'événements pour le clic
     this.title.setInteractive({ useHandCursor: true }).on('pointerdown', () => {
       this.startGame('Game2')
@@ -59,10 +75,12 @@ export class MainMenu extends Scene
 
     this.title.on('pointerover', () => {
       this.title.setStyle({ color: '#ff0' }) // Change color on hover
+      this.speedrunButtonTooltip.setVisible(true) // Show tooltip
     })
 
     this.title.on('pointerout', () => {
       this.title.setStyle({ color: 'yellow' }) // Reset color when not hovering
+      this.speedrunButtonTooltip.setVisible(false) // Hide tooltip
     })
 
     // Create input element
