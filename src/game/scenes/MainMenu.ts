@@ -36,7 +36,7 @@ export class MainMenu extends Scene
       align: 'center'
     }).setOrigin(0.5).setDepth(100)
 
-    this.classicButtonTooltip = this.add.text(512, 340, '30 seconds to get the most items you can and win Lidl Points !', {
+    this.classicButtonTooltip = this.add.text(512, 340, '30 secondes pour parcourir le plus de rayons possible. Un gros panier = des gros points chez Lidl !', {
       fontFamily: 'Arial', fontSize: 20, color: 'white',
       backgroundColor: 'black',
       align: 'center'
@@ -62,7 +62,7 @@ export class MainMenu extends Scene
       align: 'center'
     }).setOrigin(0.5).setDepth(100)
 
-    this.speedrunButtonTooltip = this.add.text(512, 520, 'Get every item in a minimum of time and win Lidl Points !', {
+    this.speedrunButtonTooltip = this.add.text(512, 520, 'Parcoure tous les rayons le plus vite possible et gagne des points chez Lidl !', {
       fontFamily: 'Arial', fontSize: 20, color: 'white',
       backgroundColor: 'black',
       align: 'center'
