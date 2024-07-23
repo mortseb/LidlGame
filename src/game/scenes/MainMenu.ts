@@ -95,8 +95,8 @@ export class MainMenu extends Scene
     this.inputElement.type = 'text'
     this.inputElement.placeholder = 'Enter your pseudonym'
     this.inputElement.style.position = 'absolute'
-    this.inputElement.style.left = '44.7%'
-    this.inputElement.style.top = '80%'
+    this.inputElement.style.left = '144.7%'
+    this.inputElement.style.top = '180%'
     this.inputElement.style.transform = 'translate(-50%, -50%)'
     this.inputElement.style.fontSize = '16px'
     this.inputElement.style.padding = '10px'
@@ -106,12 +106,6 @@ export class MainMenu extends Scene
   startGame (sceneName: string)
   {
     const pseudonym = this.inputElement.value
-
-    if (!pseudonym)
-    {
-      alert('Please enter a pseudonym before starting the game.')
-      return
-    }
 
     if (this.logoTween)
     {
